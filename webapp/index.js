@@ -1,13 +1,14 @@
 sap.ui.define([
-    "sap/ui/core/mvc/XMLView"
+    "sap/ui/core/ComponentContainer"
 
-], function (XMLView) {
+], function (ComponentContainer) {
     "use strict";
 
-    XMLView.create({
-        viewName: "ui5.quickstart.view.App"
-    }).then( function (oView){
-        oView.placeAt("content");
-    })
-
+    new ComponentContainer({
+		name: "ui5.quickstart",
+		settings : {
+			id : "quickstart"
+		},
+		async: true
+	}).placeAt("content");
 });
