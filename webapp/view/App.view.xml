@@ -10,6 +10,17 @@
         value="{/recipient/name}"
         description="Hello {/recipient/name}"
         valueLiveUpdate="true"
+        width="90%"/>
+
+
+    <Button
+        text="{i18n>howAreYouText}"
+        press=".onHowAreYou"/>
+
+    <Input
+        value="{/recipient/mood}"
+        description="You are {/recipient/mood}"
+        valueLiveUpdate="true"
         width="60%"/>
 
 </mvc:View>

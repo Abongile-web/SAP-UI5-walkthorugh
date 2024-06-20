@@ -19,6 +19,15 @@ sap.ui.define([
 
           // show a native JavaScript alert
           MessageToast.show(sMsg)
+       },
+
+
+       onHowAreYou() {
+         const oBundle = this.getView().getModel('i18n').getResourceBundle();
+         const sMood = this.getView().getModel().getProperty("/recipient/mood");
+         const sResponse = oBundle.getText("responseMsg", [sMood]);
+
+         MessageToast.show(sResponse);
        }
     });
  });
