@@ -7,14 +7,10 @@ sap.ui.define([
     "use strict";
  
     return UIComponent.extend("ui5.quickstart.Component", {
-        metadata : {
-            "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-            "rootView": {
-               "viewName": "ui5.quickstart.view.App",
-               "type": "XML",
-               "id": "app"
-            }
-         },
+      metadata : {
+         interfaces: ["sap.ui.core.IAsyncContentCreation"],
+         manifest: "json"
+      },
 
 
        init() {
@@ -30,11 +26,6 @@ sap.ui.define([
          const oModel = new JSONModel(oData);
          this.setModel(oModel);
 
-         // set i18n model
-         const i18nModel = new ResourceModel({
-            bundleName: "ui5.quickstart.i18n.i18n"
-         });
-         this.setModel(i18nModel, "i18n");
        }
     });
  });
